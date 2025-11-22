@@ -39,7 +39,29 @@
 ### Step 12: 
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void swap(int *x, int *y) {   
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int main() {
+    int m, n;
+    scanf("%d %d", &m, &n);   
+    printf("m is %d, n is %d\n", m, n); 
+    swap(&m, &n);   
+    printf("m is %d, n is %d\n", m, n);  
+    return 0;
+}
+```
 # Output:
+
+<img width="1187" height="423" alt="517417581-99563cfe-5772-4f31-97af-d726b9705639" src="https://github.com/user-attachments/assets/328e296f-e559-4f5f-a95c-1366ea8e3f99" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +99,30 @@
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int main() {
+    int n = 8;           
+    int a = 0, b = 1, c, i = 1;
+    printf("%d %d ", a, b); 
+
+    do {
+        c = a + b;        
+        printf("%d ", c);
+        a = b;            
+        b = c;
+        i++;
+    } while (i <= n - 2);  
+    
+    printf("\n");
+    return 0;
+}
+```
 # Output:
+
+<img width="1186" height="242" alt="517420309-362e9187-8619-4a20-b887-ec808b93bdc3" src="https://github.com/user-attachments/assets/8581bd1a-09b1-49d0-a285-0a0caaa8e54e" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +164,40 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void printEvenOdd(int cur, int limit) {
+    if (cur > limit)
+        return;
+
+    if (cur == limit)
+        printf("%d", cur);
+    else
+        printf("%d, ", cur);
+
+    printEvenOdd(cur + 2, limit);
+}
+
+int main() {
+    int lowerLimit, upperLimit;
+
+    printf("Enter the lower limit: ");
+    scanf("%d", &lowerLimit);
+
+    printf("Enter the upper limit: ");
+    scanf("%d", &upperLimit);
+
+    printf("The numbers in the given range are:\n");
+    printEvenOdd(lowerLimit, upperLimit);
+
+    return 0;
+}
+```
 # Output:
+
+<img width="812" height="242" alt="517420566-425f80d9-5dae-40dc-82fc-8a7fdcd456c3" src="https://github.com/user-attachments/assets/7b928956-5c19-467d-b86c-e82b95708e99" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +239,41 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr, n, i, sum = 0;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    ptr = calloc(n, sizeof(int));
+
+    if (ptr == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    printf("Enter %d integers:\n", n);
+    for (i = 0; i < n; i++)
+        scanf("%d", ptr + i);
+
+    for (i = 0; i < n; i++)
+        sum += *(ptr + i);
+
+    printf("Sum = %d\n", sum);
+
+    free(ptr);
+
+    return 0;
+}
+```
 # Output:
+
+<img width="811" height="346" alt="517420810-11f70a74-8d93-4030-a675-2c53a41480c4" src="https://github.com/user-attachments/assets/45d30ea3-b958-42fd-bbb8-ab459494adf5" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +309,33 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void displayArray(int *arr, int size);
+
+int main() {
+    int arr[5], i;
+
+    printf("Enter 5 integers:\n");
+    for (i = 0; i < 5; i++)
+        scanf("%d", &arr[i]);
+
+    displayArray(arr, 5);
+
+    return 0;
+}
+
+void displayArray(int *arr, int size) {
+    int i;
+    printf("Array elements are:\n");
+    for (i = 0; i < size; i++)
+        printf("%d ", arr[i]);
+}
+```
 # Output:
+
+<img width="816" height="291" alt="517421036-6d091e1a-c01a-4054-80b8-be1d52addf40" src="https://github.com/user-attachments/assets/e03355f6-f554-4e38-84fb-52610b2d660e" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
